@@ -1,0 +1,241 @@
+/* reset + body styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0f0f11;
+  font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+  color: #eaeaea;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 20px;
+  transition: background 0.5s, color 0.5s;
+}
+
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(40,40,40,0.5) 0%, transparent 70%), url('https://www.transparenttextures.com/patterns/stardust.png');
+  background-size: cover;
+  z-index: -1;
+}
+
+.card {
+  background: rgba(28, 28, 30, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeSlideIn 1.2s ease-out forwards;
+}
+
+.card.landscape {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 30px;
+  max-width: 900px;
+  gap: 30px;
+}
+
+.card .left {
+  flex: 0 0 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 4px solid #4af17f;
+  animation: fadeIn 2s ease forwards;
+}
+
+.card .right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+.animated-subtitle {
+  font-size: 1rem;
+  color: #aaaaaa;
+  animation: pulseSubtitle 2s ease infinite alternate;
+}
+
+.desc {
+  font-size: 1rem;
+  color: #cccccc;
+  line-height: 1.6;
+}
+
+/* buttons */
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 18px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+
+.vgen {
+  background: linear-gradient(135deg, #50ff9a, #34e685);
+  color: #0a0a0a;
+}
+
+.vgen:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(80, 255, 154, 0.4);
+}
+
+.twitter {
+  background: linear-gradient(135deg, #000000, #000000);
+  color: #ffffff;
+}
+
+.twitter:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.kofi {
+  background: linear-gradient(135deg, #90f1f1, #6bdada);
+  color: #0a0a0a;
+}
+
+.kofi:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(144, 241, 241, 0.4);
+}
+
+.btn-icon {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+  border-radius: 4px;
+  background-color: white;
+  padding: 2px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+/* toggle */
+.toggle-btn {
+  margin-top: 10px;
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: 1px solid #888;
+  background: transparent;
+  color: #aaa;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+/* animations */
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseSubtitle {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* light mode */
+body.light-mode {
+  background-color: #f5f5f5;
+  color: #222;
+}
+
+body.light-mode .card {
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .desc {
+  color: #555;
+}
+
+body.light-mode .toggle-btn {
+  color: #444;
+  border: 1px solid #aaa;
+}
+
+body.light-mode .toggle-btn:hover {
+  background: #f0f0f0;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .card.landscape {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .card .left {
+    margin-bottom: 20px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}

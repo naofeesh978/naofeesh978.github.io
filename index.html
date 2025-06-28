@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nao - Enhanced Landscape Card</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="background"></div>
+
+  <div class="card landscape">
+    <!-- left: profile image -->
+    <div class="left">
+      <img src="display_image1.jpg" alt="Profile Image" class="profile-img" />
+    </div>
+
+    <!-- right: text content -->
+    <div class="right">
+      <h1>Nao</h1>
+      <p class="animated-subtitle">Freelance Artist • Illustrator </p>
+      <p class="desc">
+        Hi! I'm a freelance digital artist from the Philippines. I specialize in character art and commissions!
+      </p>
+
+      <!-- buttons with logos beside text -->
+      <div class="buttons">
+        <a href="#" class="btn vgen">
+          <img src="VGen.png" alt="VGen" class="btn-icon" />
+          VGen
+        </a>
+        <a href="#" class="btn twitter">
+          <img src="X.png" alt="Twitter" class="btn-icon" />
+          Twitter
+        </a>
+        <a href="#" class="btn kofi">
+          <img src="Ko-Fi.png" alt="Ko-Fi" class="btn-icon" />
+          Ko-Fi
+        </a>
+      </div>
+
+      <!-- theme toggle -->
+      <button id="toggle-theme" class="toggle-btn">Toggle Light / Dark</button>
+    </div>
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById('toggle-theme');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+    });
+  </script>
+</body>
+</html>
